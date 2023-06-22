@@ -31,7 +31,8 @@ def set_wallpaper(image_path):
     # Call SystemParametersInfo to set the wallpaper
     result = ctypes.windll.user32.SystemParametersInfoW(
         SPI_SETDESKWALLPAPER, 0, image_path, 3)
-
+    
+    print("Script executed!!")
     if not result:
         print("Failed to set the desktop background.")
 
