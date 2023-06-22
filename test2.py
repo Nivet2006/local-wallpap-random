@@ -5,7 +5,7 @@ import random
 import time
 
 # Define the path to the folder with images
-folder_path = "C:\\Users\\Abhinav\\3D Objects\\we2"
+folder_path = ".\\dbc-sample-wallpaper"
 
 # Get the list of image files in the folder
 image_files = [f for f in os.listdir(folder_path) if f.endswith(".jpg") or f.endswith(".png")]
