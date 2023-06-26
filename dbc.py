@@ -1,9 +1,11 @@
+#Don't forget to change the base path to the correct path where the wallpapers are stored locally
+
 import ctypes
 import os
 import time
 
 # Define the base path to the image files
-base_path = "C:\\Users\\nived\\Downloads\\local-wallpap-random-2-niv\\local-wallpap-random-2-niv\\dbc-sample-wallpaper\\"
+base_path = "C:\\Users\\nived\\OneDrive\\Documents\\GitHub\\local-wallpap-random\\dbc-sample-wallpaper\\"
 image_extension = ".png"
 
 # Get the list of image files in the folder
