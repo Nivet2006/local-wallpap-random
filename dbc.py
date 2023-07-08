@@ -1,43 +1,42 @@
-import os
-import random
+#Don't forget to change the base path to the correct path where the wallpapers are stored locally
+
 import ctypes
+import os
+import time
 
-# Directory path containing the wallpaper images
-wallpaper_folder = "./dbc-sample-wallpaper"
-
-# Validating the wallpaper folder path
-if not os.path.isdir(wallpaper_folder):
-    print("Invalid wallpaper folder path. Please check the path and try again.")
-    exit()
+# Define the base path to the image files
+base_path = "C:\\Users\\nived\\OneDrive\\Documents\\GitHub\\local-wallpap-random\\dbc-sample-wallpaper\\"
+image_extension = ".png"
 
 # Get the list of image files in the folder
-image_files = [file for file in os.listdir(wallpaper_folder) if file.endswith((".png", ".jpg", ".jpeg"))]
+image_files = [f for f in os.listdir(base_path) if f.endswith(image_extension)]
 
-# Check if there are any valid image files
-if not image_files:
-    print("No valid image files found in the wallpaper folder. Add any .jpeg, .png or .jpg image and try again")
-    exit()
+# Set the number of iterations for the loop
+num_iterations = len(image_files)
 
-# Selecting a random image from the list of images in local
-random_image = random.choice(image_files)
+for i in range(num_iterations):
+    # Construct the image file path
+    image_name = str(i + 1) + image_extension
+    image_path = os.path.join(base_path, image_name)
 
-# Set the desktop background
-SPI_SETDESKWALLPAPER = 20
+    # Check if the file exists
+    if os.path.isfile(image_path):
+        try:
+            # Set the wallpaper using ctypes
+            result = ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 0)
 
-def set_wallpaper(image_path):
-    # Convert image path to a C-style string
-    image_path = image_path.encode('utf-16le')
+            if result:
+                print(f"Wallpaper changed successfully to '{image_name}'!")
+            else:
+                print(f"Failed to change wallpaper to '{image_name}'.")
+        except Exception as e:
+            print(f"An error occurred while changing wallpaper: {str(e)}")
+    else:
+        print(f"File '{image_name}' not found!")
 
-    # Call SystemParametersInfo to set the wallpaper
-    result = ctypes.windll.user32.SystemParametersInfoW(
-        SPI_SETDESKWALLPAPER, 0, image_path, 3)
-    
-    print("Script executed!!")
-    if not result:
-        print("Failed to set the desktop background.")
-
-# Construct the full img path to the random image
-image_path = os.path.join(wallpaper_folder, random_image)
-
-# Call the set_wallpaper function to change the desktop background
-set_wallpaper(image_path)
+    # Delay for one hour before the next iteration
+    time.sleep(10)  
+    # 3600 seconds = 1 hour
+    # 1800 seconds = 0.5 hour
+    # 900 seconds = 0.25 hour
+    # 450 seconds = 0.125 hour
