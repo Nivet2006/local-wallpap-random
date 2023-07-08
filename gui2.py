@@ -55,7 +55,7 @@ def display_image():
 # Create a tkinter root window
 root = tk.Tk()
 # Set the window title
-root.title("Image Viewer")
+root.title("The Wall App")
 # Set the window size
 root.geometry("800x600")
 
