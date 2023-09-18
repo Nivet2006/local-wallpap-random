@@ -1,0 +1,18 @@
+ABSTRACT
+
+THE WALL APP
+
+The Wall App, built using Python, offers users a seamless way to transform their desktop backgrounds with a diverse collection of wallpapers. Users can curate their own personalized gallery by storing the wallpapers locally in a folder. The app takes care of the tedious task of wallpaper rotation, automatically changing the desktop wallpaper every hour, providing a dynamic and captivating visual experience. 
+
+The Wall App incorporates robust error handling to ensure smooth operation. It verifies the existence of each image file in the designated folder and handles potential file not found errors gracefully. Additionally, the app utilizes exception-handling techniques to capture and display any unforeseen errors during the wallpaper-changing process. This proactive approach to error handling enhances user experience by providing clear and concise feedback on issues encountered.
+
+In addition to the existing local wallpaper storage, the Wall App has the ability to download new wallpapers from online sources like Pexels, expanding the range of available options for users. This feature allows users to effortlessly access a vast library of high-quality wallpapers and seamlessly integrate them into their rotation.
+
+With its user-friendly interface and reliable functionality, the Wall App offers a delightful way to enhance the aesthetics of the desktop environment. Users can sit back and enjoy the ever-changing backdrop, appreciating the beauty and creativity of the wallpapers without worrying about manual intervention. Whether for personal use or in professional settings, the Wall App adds a touch of elegance and variety to the computer experience, making it a valuable addition to any user's toolkit.
+
+The Wall App demonstrates the power of Python in automating desktop customization. By combining its ability to interact with the operating system using ctypes module and its intuitive error-handling mechanisms, the app offers a seamless wallpaper rotation experience. Its simplicity and efficiency make it accessible to users of all skill levels, empowering them to refresh their desktops with captivating visuals effortlessly. The Wall App opens up a world of creativity and personalization, turning the computer screen into a vibrant canvas that evolves with the passing hours.
+
+In future iterations, the Wall App has the potential to introduce exciting updates and features to enhance the user experience. Some possible additions include Wallpaper Categories, Customized Rotation Interval, an Online Wallpaper Gallery, Multi-Monitor Support, and Event-based Wallpaper Changes. These potential updates and features would elevate the Wall App to new heights, offering users a richer and more tailored wallpaper management experience. By incorporating user feedback and leveraging emerging technologies, the Wall App can continue to evolve and provide an even more immersive and enjoyable desktop customization solution.
+
+
+Source code
